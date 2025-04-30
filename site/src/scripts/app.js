@@ -6,7 +6,7 @@ const cart = [];
 async function loadProducts() {
   try {
     // Fetch the Excel file
-    const response = await fetch('../../Azure_Guitar.xlsx');
+    const response = await fetch('../Azure_Guitar.xlsx');
     const arrayBuffer = await response.arrayBuffer();
 
     // Parse the Excel file
@@ -31,7 +31,7 @@ async function loadProducts() {
       const [_, name, price] = row; // Column B (name) and Column C (price)
       if (name && price) {
         const imageName = name + '.jpg';
-        const imagePath = `../src/assets/${imageName}`;
+        const imagePath = `src/assets/${imageName}`;
         console.log(imagePath);
 
         products.push({ name, price: `${price}₫`, image: imagePath });
