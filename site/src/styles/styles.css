@@ -30,7 +30,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;  
-  max-width: 1810px; /* Set a maximum width for the header content */
+  max-width: 1600px; /* Set a maximum width for the header content */
   padding: 1rem 1rem; /* Add spacing around the logo and nav */
   margin: 0 auto; /* Center the container horizontally */
   position: absolute;

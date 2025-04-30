@@ -6,7 +6,7 @@ const cart = [];
 async function loadProducts() {
   try {
     // Fetch the Excel file
-    const response = await fetch('../Azure_Guitar.xlsx');
+    const response = await fetch('../../Azure_Guitar.xlsx');
     const arrayBuffer = await response.arrayBuffer();
 
     // Parse the Excel file
