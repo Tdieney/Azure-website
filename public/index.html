@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure</title>
+  <link rel="icon" href="../src/assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="../src/styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <img src="../src/assets/logo.png" alt="Electric Guitar Shop Logo" class="shop-logo">
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="../src/assets/clip.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-content">
+        <h2>Find Your Perfect Style</h2>
+        <p>Explore our collection of high-quality products from top brands.</p>
+      </div>
+    </section>
+  
+    <section id="products">
+      <h2>Electric Guitar</h2>
+      <div class="product-list">
+        <!-- Products will be dynamically added here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Azure Guitar Shop. All rights reserved.</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="../src/scripts/app.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
