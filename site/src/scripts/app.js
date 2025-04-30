@@ -7,6 +7,10 @@ async function loadProducts() {
   try {
     // Fetch the Excel file
     const response = await fetch('Azure_Guitar.xlsx');
+    console.log('Response:', response);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
     const arrayBuffer = await response.arrayBuffer();
 
     // Parse the Excel file
@@ -17,6 +21,7 @@ async function loadProducts() {
       console.error('Sheet not found:', sheetname);
       return;
     }
+    console.log('Sheet loaded:', sheetname);
 
     // Convert sheet data to JSON
     const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
