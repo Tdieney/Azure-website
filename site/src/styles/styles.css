@@ -12,6 +12,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Frame Transition Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%); /* Start off-screen */
+    opacity: 0; /* Fully transparent */
+  }
+  100% {
+    transform: translateY(0); /* Slide into position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Fully transparent */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+}
+
 /* Header Styles */
 header {
   background: url('../assets/cover-photo.png') no-repeat center center/cover;
@@ -23,6 +44,7 @@ header {
   display: flex;
   justify-content: center; /* Center the container horizontally */
   align-items: center; /* Center the container vertically */
+  animation: slideIn 1s ease-out; /* Slide in from the top */
 }
 
 .nav-container {
@@ -42,23 +64,86 @@ header {
   width: auto;
 }
 
+/* Navigation Bar */
 header nav {
   display: flex;
+  align-items: center; /* Vertically align all navigation items */
   gap: 1.5rem; /* Add spacing between navigation links */
 }
 
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: flex; /* Ensure the dropdown aligns with other links */
+  align-items: center; /* Vertically align the "Products" link */
+}
+
+/* Dropdown toggle link */
+.dropdown-toggle {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+/* Contact link */
 header nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
   transition: color 0.3s;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem; /* Ensure consistent padding with "Products" */
   border-radius: 5px;
 }
 
 header nav a:hover {
   color: black; /* Add a hover effect with a different color */
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: block; /* Keep it block for animation purposes */
+  opacity: 0; /* Start fully transparent */
+  transform: translateY(-10px); /* Start slightly above */
+  position: absolute;
+  top: 100%; /* Position below the toggle link */
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and slide */
+}
+
+/* Show dropdown menu on hover with animation */
+.dropdown:hover .dropdown-menu {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Slide into position */
+  pointer-events: auto; /* Enable interaction */
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f4f4f4;
+  color: #007BFF;
+}
+
+/* Hover effect for dropdown toggle */
+.dropdown-toggle:hover {
+  color: #007BFF;
 }
 
 /* Hero Section Styles */
@@ -70,6 +155,7 @@ header nav a:hover {
   display: flex; /* Use flexbox to center content */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
+  animation: fadeIn 1s ease-in; /* Fade in smoothly */
 }
 
 .hero-video {

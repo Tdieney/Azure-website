@@ -12,13 +12,22 @@
     <div class="nav-container">
       <img src="src/assets/logo.png" alt="Electric Guitar Shop Logo" class="shop-logo">
       <nav>
-        <a href="#products">Products</a>
+        <div class="dropdown">
+          <a href="#products" class="dropdown-toggle">Products</a>
+          <div class="dropdown-menu">
+            <a href="#bass">Bass</a>
+            <a href="#electric-guitar">Electric Guitar</a>
+            <a href="#mfx">MFX</a>
+            <a href="#pedal">Pedal</a>
+          </div>
+        </div>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section id="hero">
       <video autoplay loop muted playsinline class="hero-video">
         <source src="src/assets/clip.mp4" type="video/mp4">
@@ -29,11 +38,36 @@
         <p>Explore our collection of high-quality products from top brands.</p>
       </div>
     </section>
-  
-    <section id="products">
+
+    <!-- Electric Guitar Section -->
+    <section id="electric-guitar">
       <h2>Electric Guitar</h2>
       <div class="product-list">
-        <!-- Products will be dynamically added here -->
+        <!-- Electric Guitar products will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- MFX Section -->
+    <section id="mfx">
+      <h2>MFX</h2>
+      <div class="product-list">
+        <!-- MFX products will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Pedal Section -->
+    <section id="pedal">
+      <h2>Pedal</h2>
+      <div class="product-list">
+        <!-- Pedal products will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Bass Section -->
+    <section id="bass">
+      <h2>Bass</h2>
+      <div class="product-list">
+        <!-- Bass products will be dynamically added here -->
       </div>
     </section>
   </main>
