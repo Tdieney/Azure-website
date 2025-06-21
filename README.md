@@ -34,12 +34,12 @@ src/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/azure-guitar-shop.git
+   git clone https://github.com/Tdieney/Azure-website.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd azure-guitar-shop
+   cd Azure-website
    ```
 
 3. Open the index.html file in your browser.
